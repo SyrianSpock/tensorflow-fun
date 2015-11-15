@@ -59,7 +59,7 @@ def main():
     vars_to_save['W2'] = sess.run(W3).tolist()
     vars_to_save['b2'] = sess.run(b3).tolist()
 
-    open("mnist_cnn.json", "w").write(json.dumps(vars_to_save, indent=2))
+    open("mnist_perceptron.json", "w").write(json.dumps(vars_to_save, indent=2))
 
 
 if __name__ == '__main__':
