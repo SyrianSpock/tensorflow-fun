@@ -54,10 +54,13 @@ def main():
 
     vars_to_save = {}
 
-    vars_to_save['W1'] = sess.run(W1).tolist()
-    vars_to_save['b1'] = sess.run(b1).tolist()
-    vars_to_save['W2'] = sess.run(W3).tolist()
-    vars_to_save['b2'] = sess.run(b3).tolist()
+    Theta1 = sess.run(b1).tolist()
+    Theta1.append(sess.run(W1).tolist())
+    Theta2 = sess.run(b3).tolist()
+    Theta2.append(sess.run(W3).tolist())
+
+    vars_to_save['Theta1'] = Theta1
+    vars_to_save['Theta2'] = Theta2
 
     open("mnist_perceptron.json", "w").write(json.dumps(vars_to_save, indent=2))
 
